@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Login</title>
+
+    <link rel="stylesheet" href="../Styles/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Login Form</span></div>
+        <form id="form" action="#">
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input id="eid" name="eid" type="text" placeholder="Employee ID" />
+            <div class="error"></div>
+          </div>
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            <input id="password" type="password" placeholder="Password" />
+            <div class="error"></div>
+          </div>
+          <div class="pass">
+            <a href="../Front end/forgotPassword.html">Forgot password?</a>
+          </div>
+          <div class="row button">
+            <input type="submit" value="Login" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    const form = document.getElementById("form");
+
+    const eid = document.getElementById("eid");
+    const password = document.getElementById("password");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      validateInputs();
+    });
+
+    const setError = (element, message) => {
+      const inputControl = element.parentElement;
+      const errorDisplay = inputControl.querySelector(".error");
+
+      errorDisplay.innerText = message;
+      inputControl.classList.add("error");
+      inputControl.classList.remove("success");
+    };
+
+    const setSuccess = (element) => {
+      const inputControl = element.parentElement;
+      const errorDisplay = inputControl.querySelector(".error");
+
+      errorDisplay.innerText = "";
+      inputControl.classList.add("success");
+      inputControl.classList.remove("error");
+    };
+
+    const validateInputs = () => {
+      const eidValue = eid.value.trim();
+      const passwordValue = password.value.trim();
+
+      if (eidValue == "") {
+        setError(eid, "Employee Id is required");
+      } else {
+        setSuccess(eid);
+      }
+
+      if (passwordValue === "") {
+        setError(password, "Password is required");
+      } else if (passwordValue.length < 8) {
+        setError(password, "Password must be at least 8 character.");
+      } else {
+        setSuccess(password);
+      }
+    };
+  </script>
+</html>

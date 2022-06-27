@@ -1,0 +1,16 @@
+{
+  "employeeId": "admin",
+  "firstName": "admin",
+  "lastName": "",
+  "email": "",
+  "phoneNumber": "",
+  "dateOfBirth": "",
+  "gender": "",
+  "departmentName": "",
+  "designation": "",
+  "salary": "",
+  "bankName": "",
+  "accountNumber": "",
+  "ifscCode": "",
+  "branchName": ""
+}

@@ -1,0 +1,81 @@
+.sidebar {
+  background: #fff;
+  position: fixed;
+  outline: #4caf50 solid 1px;
+  top: 0;
+  left: 0;
+  width: 230px;
+  overflow: scroll;
+
+  height: 100%;
+  padding: 10px 0;
+  transition: all 0.5s ease;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0px;
+}
+
+.sidebar .profile {
+  text-align: center;
+}
+
+.sidebar .profile img {
+  display: block;
+  width: 100px;
+  height: 95px;
+  border-radius: 100%;
+  margin: 0 auto;
+}
+
+.sidebar .profile h3 {
+  color: #8d599f;
+  margin: 10px 0 5px;
+}
+
+.sidebar .profile p {
+  color: #666;
+  font-size: 14px;
+}
+.sidebar ul li {
+  display: block;
+  padding: 13px 30px;
+  border-bottom: 1px solid #ececec;
+  color: #666;
+  font-size: 14px;
+  position: relative;
+  cursor: pointer;
+}
+
+.sidebar ul li .icon {
+  color: #c7cfdb;
+  width: 30px;
+  display: inline-block;
+}
+
+.sidebar ul li:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: #8d599f;
+  display: none;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+  color: #8d599f;
+  background: linear-gradient(to right, #fff, #f6edfc);
+}
+
+.sidebar ul li:hover .icon,
+.sidebar ul li.active .icon {
+  color: #8d599f;
+}
+
+.sidebar ul li:hover:before,
+.sidebar ul li.active:before {
+  display: block;
+}
