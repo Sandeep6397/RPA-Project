@@ -135,45 +135,6 @@ export default function PaySalary(props) {
 
   return (
     <div style={{ marginTop: "25vh" }}>
-      <Modal show={showError} onHide={() => setShowError(false)}>
-        {/* <Modal.Header closeButton>Error</Modal.Header> */}
-        <Modal.Body>Upload Attendance</Modal.Body>
-      </Modal>
-      <Modal
-        show={showSuccess == 1 || showSuccess == 2}
-        onHide={() => setShowSuccess(0)}
-      >
-        {/* <Modal.Header closeButton>Error</Modal.Header> */}
-        <Modal.Body>
-          {showSuccess == 1 && "Uploaded Attendance Successfully"}
-          {showSuccess == 2 && "Payment Calculations Done Successfully"}
-        </Modal.Body>
-      </Modal>
-      <center>
-        <Card style={{ margin: "5vw" }} className="mb-1">
-          <Card.Header>Upload Attendance</Card.Header>
-          <Card.Body>
-            <center>
-              <Form.Group>
-                <center>
-                  <Form.Label>Upload .csv file to update attendance</Form.Label>
-                  <CSVReader
-                    onFileLoaded={(data, fileInfo, originalFile) =>
-                      setUploadedData(data)
-                    }
-                  />
-                  <Button
-                    className="mt-1"
-                    onClick={() => uploadAttendance(uploadedData)}
-                  >
-                    Confirm
-                  </Button>
-                </center>
-              </Form.Group>
-            </center>
-          </Card.Body>
-        </Card>
-      </center>
       <center>
         <Card style={{ margin: "5vw" }} className="mt-1">
         {

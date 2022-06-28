@@ -19,7 +19,6 @@ function App() {
       case 1:
         return <ForgotPassword setActiveComponent={setActiveComponent} />;
       case 2:
-        // return <div>Yes</div>;
         return (
           <Profile
             activeUserData={activeUserData}

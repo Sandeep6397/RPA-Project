@@ -14,7 +14,6 @@ function ForgotPassword(props) {
       `http://localhost:5000/user/get/eid/${eid}`
     );
     if ((response.data.data[0].email = email)) {
-      console.log(response.data.data[0]);
       let templateParams = {
         empId: response.data.data[0].employeeId,
         pwd: response.data.data[0].password,
@@ -22,10 +21,10 @@ function ForgotPassword(props) {
       };
       emailjs
         .send(
-          "service_58o6t7r",
-          "template_gkn308p",
+          "service_2bzvtu4",
+          "template_waawxnf",
           templateParams,
-          "jI8nIeYkWvZy_8TMN"
+          "yScvMJ2d0Ty_pt5MA"
         )
         .then(
           function (response) {
@@ -46,10 +45,6 @@ function ForgotPassword(props) {
     <Container>
       <center>
         <Card style={{ marginTop: "30vh", width: "30vw" }}>
-          {/* <Modal show={showError} onHide={() => setShowError(false)}>
-          <Modal.Header closeButton>Error</Modal.Header>
-          <Modal.Body>Incorrect Values for Password/EmployeeId</Modal.Body>
-        </Modal> */}
           <Card.Header>Forgot Password</Card.Header>
           {
             info ?

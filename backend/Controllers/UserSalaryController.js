@@ -131,7 +131,7 @@ exports.salarySync = async (req,res) =>{
         grossPay:salary['Final Salary']? salary['Final Salary']:0,
         deductions:salary['Deductions']?salary['Deductions']:0,
         paymentStatus: salary['Final Salary']?'Completed':'Pending',
-        salary: salary['salary']
+        Salary: salary['Salary']
       }
       await UserSalary.update(query,updateData,{upsert:true})
       res.status(200).send()

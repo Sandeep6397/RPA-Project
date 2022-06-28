@@ -13,7 +13,7 @@ const UserSalaryModel = new mongoose.Schema({
   grossPay: {
     type: String,
   },
-  salary:{
+  Salary:{
     type: String,
   },
   deductions: {

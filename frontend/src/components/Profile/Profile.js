@@ -1,6 +1,5 @@
 import AboutMe from "./AboutMe";
 import AddRemove from "./AddRemove";
-// import ApproveAttendance from "./ApproveAttendance";
 import Leave from "./Leave";
 import Bank from "./Bank";
 import ManagePassword from "./ManagePassword";

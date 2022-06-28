@@ -11,7 +11,8 @@ function MyPay(props) {
     const response = await axios.get(
       `http://localhost:5000/userSalary/get/eid/${props.activeUserData.employeeId}`
     );
-    // console.log(response.data);
+    console.log("hii")
+     console.log(response.data);
     setPayDetails(response.data.data);
   };
   return (
@@ -23,7 +24,7 @@ function MyPay(props) {
             <tr>
               <th>NO.</th>
               <th>DATE</th>
-              <th>GROSS PAY</th>
+              <th>SALARY</th>
               <th>DEDUCTIONS</th>
               <th>NET PAY</th>
               <th>STATUS</th>
@@ -32,11 +33,12 @@ function MyPay(props) {
           <tbody>
             {payDetails.map((item, index) => {
               // console.log(item);
+              console.log(item.Salary);
               return (
                 <tr>
                   <td>{index + 1}</td>
                   <td>{item.salaryDate}</td>
-                  <td>{item.salary}</td>
+                  <td>{item.Salary}</td>
                   <td>{item.deductions}</td>
                   <td>{item.grossPay - item.deductions}</td>
                   <td>{item.paymentStatus}</td>
