@@ -16,8 +16,8 @@ export default function Request(props) {
     setLeaveDetails(response.data);
   };
   const updateLeave = async (status) => {
-    let eid = leaveDetails[selected].employeeId;
-    await axios.patch(`http://localhost:5000/leaveRequest/update/eid/${eid}`, {
+    let objid = leaveDetails[selected]._id;
+    await axios.patch(`http://localhost:5000/leaveRequest/update/objid/${objid}`, {
       status: status,
     });
     getLeave();
@@ -47,7 +47,10 @@ export default function Request(props) {
             <center>
               <Button
                 className="m-2"
-                onClick={() => setPreviewStatus(!previewStatus)}
+                onClick={() => {
+                  updateLeave("On Hold");
+                  setPreviewStatus(!previewStatus)
+                }}
               >
                 Hold
               </Button>

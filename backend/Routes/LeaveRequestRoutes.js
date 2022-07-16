@@ -35,7 +35,7 @@ leaveRequestRouter.delete(
 );
 
 leaveRequestRouter.patch(
-  "/leaveRequest/update/eid/:eid",
+  "/leaveRequest/update/objid/:objid",
   leaveRequestController.updateLeaveByEid
 );
 

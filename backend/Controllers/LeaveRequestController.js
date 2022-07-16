@@ -96,10 +96,10 @@ exports.deleteLeave = async (req, res) => {
 
 exports.updateLeaveByEid = async (req, res) => {
   // get a postID.
-  let leaveID = req.params.eid;
+  let leaveID = req.params.objid;
   // we will use findByIdAndUpdate function : findByIdAndUpdate(id, data, callback)
   await LeaveRequest.findOneAndUpdate(
-    { employeeId: leaveID },
+    { _id: leaveID },
     { $set: req.body },
     (err, data) => {
       if (err) {

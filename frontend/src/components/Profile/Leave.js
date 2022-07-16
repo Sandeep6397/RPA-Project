@@ -25,11 +25,6 @@ export default function Leave(props) {
         </Row>
       </Card.Header>
       <Card.Body>
-        {/* <Card.Text>Sick Leave/Casual Leave</Card.Text>
-        <Card.Text>
-          Days remaining from 01 Mar 2022 to 31 Dec 2022 entitlement of 12.00
-          Days
-        </Card.Text> */}
         {!buttonState && (
           <LeaveRequestTable activeUserData={props.activeUserData} />
         )}
