@@ -119,11 +119,7 @@ exports.getUserByEid = async (req, res) => {
 };
 
 exports.updateUserByEid = async (req, res) => {
-  // get a userID.
-  // let userID = new ObjectID(req.params.id);
   let userEID = req.params.eid;
-  // console.log(userID);
-  // we will use findByIdAndUpdate function : findByIdAndUpdate(id, data, callback)
   await User.findOneAndUpdate(
     { employeeId: userEID },
     { $set: req.body },
@@ -165,6 +161,11 @@ exports.syncUser = async (req,res) =>{
     let sheet = workbook.Sheets['Sheet1']
     let employees  = xlsx.utils.sheet_to_json(sheet)
     for(let employee of employees){
+
+      const userExists = await User.exists({ employeeId:employee['ID'] });
+      if (!userExists) 
+      {console.log("User does not exists");
+
       let query = {
         employeeId:employee['ID']
       }
@@ -184,12 +185,15 @@ exports.syncUser = async (req,res) =>{
         ifscCode: employee['IFCS'],
         branchName: employee['Branch Name'] ,
         password: employee['Contact No'] ,
-        accessType: employee['Job Des'] ,
+        accessType: employee['Job Des'].toLowerCase() ,
         address: null,
       }
       await User.update(query,updateData,{upsert:true})
       res.status(200).send()
     }
+  else{
+    console.log("User exists");
+  }}
   } catch (error) {
     res.status(500).send({
       message:'unable to sync employees please try again'

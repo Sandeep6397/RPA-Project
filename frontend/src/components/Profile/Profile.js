@@ -79,27 +79,7 @@ function Profile(props) {
         <Col>{showProfile()}</Col>
       </Row>
     </Container>
-    // <div className="container">
-    //   <div className="main_body">
-    //     <div className="side_menu">
-    //       <div className="wrapper">
-
-    //         <div className="section">
-    //           <div className="top_navbar">
-    //             <div className="hamburger">
-    //               <a>
-    //                 <i className="fas fa-bars"></i>
-    //               </a>
-    //             </div>
-    //           </div>
-    //           <div className="container">
-    //             <div className="inner_section"></div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
+    
   );
 }
 export default Profile;
