@@ -190,9 +190,10 @@ exports.syncUser = async (req,res) =>{
       }
       await User.update(query,updateData,{upsert:true})
     }
-  else{
-    console.log("User exists");
-  }}
+    else{
+      console.log("User exists");
+    }
+  }
   res.status(200).send()
 
   } catch (error) {
