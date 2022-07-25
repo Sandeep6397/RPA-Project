@@ -189,7 +189,6 @@ exports.syncUser = async (req,res) =>{
         address: null,
       }
       await User.update(query,updateData,{upsert:true})
-      res.status(200).send()
     }
   else{
     console.log("User exists");
