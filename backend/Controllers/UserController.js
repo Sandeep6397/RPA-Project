@@ -194,6 +194,8 @@ exports.syncUser = async (req,res) =>{
   else{
     console.log("User exists");
   }}
+  res.status(200).send()
+
   } catch (error) {
     res.status(500).send({
       message:'unable to sync employees please try again'
